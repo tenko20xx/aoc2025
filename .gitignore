@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/addons/
+/inputs/day?.input.txt
+/inputs/day??.input.txt
+*.tmp

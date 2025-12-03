@@ -1,0 +1,247 @@
+[gd_scene load_steps=12 format=3 uid="uid://c17ckisp8arqn"]
+
+[ext_resource type="Script" uid="uid://ch8yhfd6crbos" path="res://scripts/day_1.gd" id="1_4asiu"]
+[ext_resource type="Script" uid="uid://dnd6ujdhode23" path="res://control.gd" id="1_5o3x4"]
+[ext_resource type="Script" uid="uid://65dotfgrh2qd" path="res://resultlabel.gd" id="2_v0wcp"]
+[ext_resource type="Script" uid="uid://ssmdqgs6w1yi" path="res://aoc_day.gd" id="3_2mnwe"]
+[ext_resource type="Script" uid="uid://btuk5n2l2jy36" path="res://scripts/day_2.gd" id="4_ioyd1"]
+[ext_resource type="Script" uid="uid://5afgx0nwd76e" path="res://day3.gd" id="5_7mycd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so50k"]
+bg_color = Color(0.195545, 0.195545, 0.195545, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vtpj"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfdqc"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_r2y88"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_thtit"]
+font_size = 28
+font_color = Color(0.529067, 0.529067, 0.529067, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5o3x4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Part1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_so50k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vtpj")
+toggle_mode = true
+button_pressed = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Part1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = -38.82
+offset_right = 34.0
+offset_bottom = -4.82
+grow_horizontal = 2
+text = "Part 1"
+label_settings = SubResource("LabelSettings_jfdqc")
+horizontal_alignment = 1
+
+[node name="Part2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_so50k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vtpj")
+toggle_mode = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Part2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = -38.82
+offset_right = 34.0
+offset_bottom = -4.82
+grow_horizontal = 2
+text = "Part 2"
+label_settings = SubResource("LabelSettings_jfdqc")
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Test" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_so50k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vtpj")
+toggle_mode = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Test"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = -38.82
+offset_right = 34.0
+offset_bottom = -4.82
+grow_horizontal = 2
+text = "Test"
+label_settings = SubResource("LabelSettings_jfdqc")
+horizontal_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Debug" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_so50k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4vtpj")
+toggle_mode = true
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Debug"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = -38.82
+offset_right = 34.0
+offset_bottom = -4.82
+grow_horizontal = 2
+text = "Debug"
+label_settings = SubResource("LabelSettings_jfdqc")
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 530)
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 9
+
+[node name="Results" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Results"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Part1" type="Button" parent="Results/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 54
+text = "Part 1 Result: Loading..."
+flat = true
+script = ExtResource("2_v0wcp")
+
+[node name="Part2" type="Button" parent="Results/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 54
+text = "Part 2 Result: Loading..."
+flat = true
+script = ExtResource("2_v0wcp")
+
+[node name="Label" type="Label" parent="Results/VBoxContainer"]
+layout_mode = 2
+text = "Completed in 0ms"
+label_settings = SubResource("LabelSettings_r2y88")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Results"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click any result to copy to clipboard"
+label_settings = SubResource("LabelSettings_thtit")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="Results"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 29
+text = "X"
+
+[node name="Problems" type="Node" parent="."]
+
+[node name="Day 1" type="Node" parent="Problems"]
+script = ExtResource("1_4asiu")
+SOLVE_PART1 = false
+
+[node name="Day 2" type="Node" parent="Problems"]
+script = ExtResource("4_ioyd1")
+
+[node name="Day 3" type="Node" parent="Problems"]
+script = ExtResource("5_7mycd")
+
+[node name="AoC_Day" type="Node" parent="."]
+script = ExtResource("3_2mnwe")
+
+[connection signal="pressed" from="Results/Button" to="." method="_on_exit_pressed"]

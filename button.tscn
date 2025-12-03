@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://xq6f3s1ujgk7"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(109, 109)
+focus_mode = 0
+theme_override_font_sizes/font_size = 24
+text = "Day 1"
+autowrap_mode = 3
