@@ -19,17 +19,9 @@ func get_max_joltage(bank,batteries):
 	var subjolts = []
 	var last_idx = -1
 	for nb in range(1,batteries+1):
-		var M = -1
-		var Mi = last_idx
-		for idx in range(last_idx+1,len(bank)-(batteries-nb)):
-			var n = bank[idx]
-			if n > M:
-				M = n
-				Mi = idx
-				if M == 9:
-					break
+		var M = bank.slice(last_idx+1,len(bank) - (batteries-nb)).max()
+		last_idx = bank.find(M,last_idx+1)
 		subjolts.append(M)
-		last_idx = Mi
 	return int("".join(subjolts))
 	
 func solve_part1():
