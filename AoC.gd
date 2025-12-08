@@ -47,10 +47,15 @@ func strnum(n):
 		return m[n]
 	return str(n)
 
-func plural(n):
+func plural(n,suffix="s"):
 	if n == 1:
 		return ""
-	return "s"
+	return suffix
+	
+func inv_plural(n,suffix="s"):
+	if n != 1:
+		return ""
+	return suffix
 
 func list_out(l):
 	if len(l) == 0:

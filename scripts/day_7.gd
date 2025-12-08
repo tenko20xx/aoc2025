@@ -143,7 +143,6 @@ func solve_part1_method1():
 	inp = AoC.load_input_from_file("day7",TEST_MODE)
 	var map = parse_map(inp)
 	var beam_map = copy_map(map)
-	var last_row = -1
 	var beams = [find_start(map)]
 	var sum = 0
 	while beams:
