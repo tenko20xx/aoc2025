@@ -29,7 +29,11 @@ func dir_contents(path,files_only=true):
 	return files
 
 func load_input_from_file(day="day1",test=false):
-	var res_name = day + ".input" + (".test" if test else "") + ".txt"
+	var res_name = ""
+	if day.ends_with(".txt"):
+		res_name = day
+	else:
+		res_name = day + ".input" + (".test" if test else "") + ".txt"
 	if FileAccess.file_exists("res://inputs/%s" % res_name):
 		var file = FileAccess.open("res://inputs/%s" % res_name, FileAccess.READ)
 		var content = file.get_as_text()
